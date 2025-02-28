@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CITYINFO</title>
+    </head>
+    <body>
+        <input type = "text" id = "city" placeholder="Enter City Name"/>
+        <button onclick="getCityInfo()">Get Info</button>
+        <div id = "city-info">
+        </div>
+    <script>
+        const CityInfo = {
+            nagpur : {
+                name:"Nagpur",
+                state : "Maharashtra",
+                country : "India",
+                info: "thdi rut ehmt,t fyjeklvfg fior tuemmglmrggl fiothrmmflllritogno thme",
+                image : "https://s7ap1.scene7.com/is/image/incredibleindia/1-dhamma-chakra-stupa-nagpur-maharashtra-city-hero?qlt=82&ts=1726669922076", />
+            }
+        }
+        function getCityInfo(){
+            const cityName = document.getElementById("city").value.toLowerCase();
+            const cityDetails = CityInfo[cityName];
+
+            if(!cityDetails){
+                alert("city not found");
+            return;
+        }
+        const cityInfoDiv = document.getElementById("city-info");
+        cityInfoDiv.innerHTML = `
+        <img src = "${cityDetails.image}"alt = "${cityDetails.name}"/>
+    </script>
+ </body>
+</html>
